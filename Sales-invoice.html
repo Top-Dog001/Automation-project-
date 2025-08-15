@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Invoice</title>
+  <link href="sales-invoice.css" rel="stylesheet" />
+</head>
+<body>
+
+  <h2 class="heading">Sales Invoice</h2>
+  
+  <div id="sales-tables"></div>
+
+  <!-- Sales Table -->
+  <table class="sales-table">
+    <thead>
+      <tr>
+        <th>S/N</th>
+        <th>DATE</th>
+        <th>DESCRIPTION (kg)</th>
+        <th>INPUT NET (kg)</th>
+        <th>OUTPUT (kg)</th>
+        <th>BALANCE (kg)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be filled by JS -->
+    </tbody>
+  </table>
+  </div>
+
+  <!-- Calculator Floating Button -->
+  <button class="calc-float">🧮</button>
+
+  <!-- Calculator Panel -->
+  <div id="bottomCalc">
+    <input type="text" id="calcDisplay" readonly>
+    <div id="calcKeys">
+      <button>7</button><button>8</button><button>9</button><button>/</button>
+      <button>4</button><button>5</button><button>6</button><button>*</button>
+      <button>1</button><button>2</button><button>3</button><button>-</button>
+      <button>0</button><button>.</button><button>=</button><button>+</button>
+      <button id="clearBtn">AC</button>
+    </div>
+  </div>
+
+  <script src="sales-invoice.js"></script>
+  <script src="bottom-calc.js"></script>
+</body>
+</html>

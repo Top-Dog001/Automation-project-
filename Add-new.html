@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add New</title>
+  <link rel="stylesheet" href="Add-new.css" />
+</head>
+<body>
+  <h2 class="heading">Add New Transaction</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>S/N</th>
+        <th>DATE</th>
+        <th>INITIAL (kg)</th>
+        <th>FINAL (kg)</th>
+        <th>UNIT PURCHASE (kg)</th>
+        <th>COST (#)</th>
+        <th>REMARK</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="number" name="sn1" /></td>
+        <td><input type="date" name="date1" /></td>
+        <td><input type="number" name="initial1" /></td>
+        <td><input type="number" name="final1" /></td>
+        <td><input type="number" name="unitPurchase1" /></td>
+        <td><input type="number" name="cost1" readonly /></td>
+        <td><input type="text" name="remark1" /></td>
+      </tr>
+      <tr>
+        <td><input type="number" name="sn2" /></td>
+        <td><input type="date" name="date2" /></td>
+        <td><input type="number" name="initial2" /></td>
+        <td><input type="number" name="final2" /></td>
+        <td><input type="number" name="unitPurchase2" /></td>
+        <td><input type="number" name="cost2" readonly /></td>
+        <td><input type="text" name="remark2" /></td>
+      </tr>
+      <tr class="balance-row">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type="text" value="TOTAL" readonly /></td>
+        <td><input type="number" name="unit-purchase" value="0.00" readonly /></td>
+        <td><input type="number" name="cost" value="0.00" readonly /></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <button id="saveAddNew" class="save-btn">💾 Save Data</button>
+
+  <!-- Calculator -->
+  <button class="calc-float">🧮</button>
+  <div id="bottomCalc">
+    <input type="text" id="calcDisplay" readonly />
+    <div id="calcKeys">
+      <button>7</button><button>8</button><button>9</button><button>/</button>
+      <button>4</button><button>5</button><button>6</button><button>*</button>
+      <button>1</button><button>2</button><button>3</button><button>-</button>
+      <button>0</button><button>.</button><button>=</button><button>+</button>
+      <button id="clearBtn">AC</button>
+    </div>
+  </div>
+
+  <script src="Add-new.js"></script>
+  <script src="bottom-calc.js"></script>
+</body>
+</html>
