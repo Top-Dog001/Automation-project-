@@ -85,6 +85,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const newRow = createRow();
     tbody.insertBefore(newRow, balanceRow());
     renumberRows();
+
+    function updateResetCountdown() {
+  const countdownEl = document.getElementById("resetCountdown");
+
+  if (!countdownEl) return;
+
+  // Get next midnight
+  const now = new Date();
+  const midnight = new Date(now);
+  midnight.setHours(24, 0, 0, 0);
+
+  const diffMs = midnight - now;
+
+  // Convert to hours, minutes, seconds
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+  countdownEl.textContent = `Next Reset in: ${hours}h ${minutes}m ${seconds}s`;
+}
+
+// Update every second
+setInterval(updateResetCountdown, 1000);
+updateResetCountdown();
     newRow.querySelector('td:nth-child(2) input').focus();
   });
 
@@ -189,3 +213,28 @@ setInterval(() => {
     resetDataForNewDay();
   }
 }, 60000); // check every 60 seconds
+
+
+function updateResetCountdown() {
+  const countdownEl = document.getElementById("resetCountdown");
+
+  if (!countdownEl) return;
+
+  // Get next midnight
+  const now = new Date();
+  const midnight = new Date(now);
+  midnight.setHours(24, 0, 0, 0);
+
+  const diffMs = midnight - now;
+
+  // Convert to hours, minutes, seconds
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+  countdownEl.textContent = `Next Reset in: ${hours}h ${minutes}m ${seconds}s`;
+}
+
+// Update every second
+setInterval(updateResetCountdown, 1000);
+updateResetCountdown();
